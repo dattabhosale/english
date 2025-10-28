@@ -94,9 +94,9 @@
 				console.log(currentUrl); // Example: https://www.example.com/path/to/page?param1=value1#section
 				const urlArray = currentUrl.split("/")
 				console.log( "urlArray", urlArray );
-				console.log("Second Element ", urlArray[1]);
-				
-				embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields( { "Country" : urlArray[3] } );
+				console.log("Second Element ", urlArray[3]);
+				const country = urlArray[3];
+				embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields( { "Country" :  country} );
 			});
 			embeddedservice_bootstrap.init(
 				'00DMA000003XnGM',
