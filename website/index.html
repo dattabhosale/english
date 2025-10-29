@@ -94,9 +94,44 @@
 				console.log(currentUrl); // Example: https://www.example.com/path/to/page?param1=value1#section
 				const urlArray = currentUrl.split("/")
 				console.log( "urlArray", urlArray );
-				console.log("Second Element ", urlArray[3]);
+				console.log(" Url Country", urlArray[3]);
 				const country = urlArray[3];
-				embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields( { "Country" :  country} );
+				const languageData = [
+  										['uk', 'English'],
+  										['it', 'Italiano'],
+  										['de', 'Deutsch'],
+										['fr', 'Français'],
+										['cz', 'Czech'],
+										['ie', 'English'],
+										['hu', 'Magyar'],
+										['gr', 'Greek'],
+										['hr', 'Croatian'],
+										['bg','Bulgarian'],
+										['nl', 'Nederland'],
+										['pt', 'Português']
+									];
+				const languageMap = new Map(languageData);
+				const countryData = [
+  										['uk', 'United Kingdom'],
+  										['it', 'Italia'],
+  										['de', 'Deutschland'],
+										['fr', 'France'],
+										['cz', 'Czech Republic'],
+										['ie', 'Ireland'],
+										['hu', 'Hungary'],
+										['gr', 'Greece'],
+										['hr', 'Croatia'],
+										['bg', 'Bulgaria'],
+										['nl', 'Nederland'],
+										['pt', 'Portugal']
+									];
+				const countryMap = new Map(countryData);
+				const ct = countryData.get('it');
+				const lg = languageMap.get('it');
+				console.log('value of ct',ct);
+				console.log('value of lg',lg);
+				embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields( { "Country" :  ct} );
+				embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields( { "Language" :  lg} );
 			});
 			embeddedservice_bootstrap.init(
 				'00DMA000003XnGM',
