@@ -98,7 +98,7 @@
 				const country = urlArray[3];
 				const languageData = [
   										['uk', 'English'],
-  										['it', 'Italiano'],
+  										['it', 'Italian'],
   										['de', 'Deutsch'],
 										['fr', 'Français'],
 										['cz', 'Czech'],
@@ -113,7 +113,7 @@
 				const languageMap = new Map(languageData);
 				const countryData = [
   										['uk', 'United Kingdom'],
-  										['it', 'Italia'],
+  										['it', 'Italy'],
   										['de', 'Deutschland'],
 										['fr', 'France'],
 										['cz', 'Czech Republic'],
@@ -130,8 +130,10 @@
 				const lg = languageMap.get('it');
 				console.log('value of ct',ct);
 				console.log('value of lg',lg);
-				embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields( { "Country" :  ct} );
-				embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields( { "Language" :  lg} );
+				embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({
+  																				Country: ct,
+  																				Language: "Italian",
+ 																			});
 			});
 			embeddedservice_bootstrap.init(
 				'00DMA000003XnGM',
