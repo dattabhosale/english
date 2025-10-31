@@ -126,13 +126,13 @@
 										['pt', 'Portugal']
 									];
 				const countryMap = new Map(countryData);
-				const ct = countryMap.get('it');
-				const lg = languageMap.get('it');
+				const ct = countryMap.get('uk');
+				const lg = languageMap.get('uk');
 				console.log('value of ct',ct);
 				console.log('value of lg',lg);
 				embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({
   																				Country: ct,
-  																				Language: "Italian",
+  																				Language: lg,
  																			});
 			});
 			embeddedservice_bootstrap.init(
